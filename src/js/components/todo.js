@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
+import {Link} from 'react-router';
 
-const Todo = ({title, completed, onToggleTodo, onDeleteTodo}) => (
+const Todo = ({id, title, completed, onToggleTodo, onDeleteTodo}) => (
     <li>
         <span
             onClick={onToggleTodo}
@@ -9,7 +10,7 @@ const Todo = ({title, completed, onToggleTodo, onDeleteTodo}) => (
             {title}
         </span>
         <button onClick={onDeleteTodo}>X</button>
-        <button>Browse</button>
+        <Link to={'/app/todos/' + id}>View</Link>
     </li>
 );
 
